@@ -10,12 +10,14 @@ var extensions = {
 };
 
 var directories = {
-  client: '/../client/'
+  client: '/../client/',
+  bower_components: '/../client/bower_components/'
 }
 
 var files = {
     '/': directories.client + 'index.html',
-    '/style.css': directories.client + 'style.css'
+    '/style.css': directories.client + 'style.css',
+    '/bower_components/angular/angular.js': directories.bower_components + 'angular/angular.js'
 };
 
 var server = http.createServer(function(req, res) {
