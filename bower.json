@@ -1,0 +1,7 @@
+{
+  "name": "art-game",
+  "dependecies": {},
+  "dependencies": {
+    "angular": "^1.5.7"
+  }
+}
