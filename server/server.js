@@ -17,7 +17,8 @@ var directories = {
 var files = {
     '/': directories.client + 'index.html',
     '/style.css': directories.client + 'style.css',
-    '/bower_components/angular/angular.js': directories.bower_components + 'angular/angular.js'
+    '/bower_components/angular/angular.js': directories.bower_components + 'angular/angular.js',
+    '/bower_components/angular-ui-router/release/angular-ui-router.js': directories.bower_components + 'angular-ui-router/release/angular-ui-router.js'
 };
 
 var server = http.createServer(function(req, res) {
@@ -28,6 +29,7 @@ var server = http.createServer(function(req, res) {
 
   fs.exists(filePath, function(exists) {
     ext = path.extname(filePath);
+    console.log(ext);
     if (exists) {
       fs.readFile(filePath, function(err, data){
         if (err) console.log(err)
