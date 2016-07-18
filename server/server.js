@@ -5,8 +5,9 @@ var fs = require('fs');
 
 // Variables for pathing
 var extensions = {
-  '.html': 'text/html',
-  '.css': 'text/css'
+  '.html': "text/html",
+  '.css': "text/css",
+  '.js': "text/js"
 };
 
 var directories = {
@@ -25,19 +26,31 @@ var server = http.createServer(function(req, res) {
   // routing
   var reqPath = url.parse(req.url).pathname;
   var filePath = path.join(__dirname + files[reqPath]);
-  console.log('request for path: ' + reqPath + '   file: ' + filePath);
+  console.log('requested file: ' + filePath);
 
   fs.exists(filePath, function(exists) {
     ext = path.extname(filePath);
-    console.log(ext);
     if (exists) {
-      fs.readFile(filePath, function(err, data){
-        if (err) console.log(err)
-        else {
-          res.writeHead(200, {'Content-type': extensions[ext]});
-          res.end(data);
-        }
-      })
+      // why do I need this fucking exception for .css files?
+      if (ext === '.css') {
+        fs.readFile(filePath, function(err, data){
+          if (err) console.log(err)
+          else {
+            res.writeHead(200, {'Content-Type': 'text/css'});
+            res.write(data);
+            res.end();
+          }
+        })
+      } else {
+        fs.readFile(filePath, function(err, data){
+          if (err) console.log(err)
+          else {
+            res.writeHead(200, {'Content-Type': extensions[ext]});
+            res.write(data);
+            res.end();
+          }
+        })
+      }
     } else {
     res.writeHead(404);
     res.end('wtf, could not find: ' + filePath);
