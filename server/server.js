@@ -12,14 +12,19 @@ var extensions = {
 
 var directories = {
   client: '/../client/',
-  bower_components: '/../client/bower_components/'
+  bower_components: '/../client/bower_components/',
+  pages: '/../client/pages/'
 }
 
 var files = {
     '/': directories.client + 'index.html',
     '/style.css': directories.client + 'style.css',
     '/bower_components/angular/angular.js': directories.bower_components + 'angular/angular.js',
-    '/bower_components/angular-ui-router/release/angular-ui-router.js': directories.bower_components + 'angular-ui-router/release/angular-ui-router.js'
+    '/bower_components/angular-ui-router/release/angular-ui-router.js': directories.bower_components + 'angular-ui-router/release/angular-ui-router.js',
+    '/app.js': directories.client + 'app.js',
+    // Partials
+    '/home.html': directories.pages + 'home.html'
+
 };
 
 var server = http.createServer(function(req, res) {

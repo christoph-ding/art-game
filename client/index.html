@@ -4,15 +4,16 @@
   <title> Art Game </title>
   <link rel="stylesheet" type="text/css" href="style.css">
 </head>
-<body>
+<body ng-app="routerApp">
   <h1> This is an art game.  This is outside the angular directive </h1>
-  <div> 
-    <h2> This is inside a directive </h2>
+
+  <div ui-view> 
   </div>
 
   <!-- load scripts -->
   <script src="bower_components/angular/angular.js"></script>
   <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+  <script src="app.js"></script>
 
 </body>
 </html>
