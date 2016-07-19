@@ -22,16 +22,16 @@ var files = {
     '/bower_components/angular/angular.js': directories.bower_components + 'angular/angular.js',
     '/bower_components/angular-ui-router/release/angular-ui-router.js': directories.bower_components + 'angular-ui-router/release/angular-ui-router.js',
     '/app.js': directories.client + 'app.js',
-    // Partials
-    '/home.html': directories.pages + 'home.html'
-
+    // 'Pages'
+    '/cover.html': directories.pages + 'cover.html',
+    '/about.html': directories.pages + 'about.html'
 };
 
 var server = http.createServer(function(req, res) {
   // routing
   var reqPath = url.parse(req.url).pathname;
   var filePath = path.join(__dirname + files[reqPath]);
-  console.log('requested file: ' + filePath);
+  console.log('requested file: ' + filePath + '       ' + reqPath);
 
   fs.exists(filePath, function(exists) {
     ext = path.extname(filePath);
