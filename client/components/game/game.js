@@ -1,4 +1,11 @@
 angular.module('game', [])
 .controller('gameController', function() {
   this.title = 'hello';
+  this.rows = [
+    [ 0, 1, 2, 3, 4 ],
+    [ 5, 6, 7, 8, 9 ],
+    [ 10, 11, 12, 13, 14 ],
+    [ 15, 16, 17, 18, 19 ]
+    ];
+  // this.rows = [1,2,3,4,5];
 })
