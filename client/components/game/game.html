@@ -2,13 +2,12 @@
   <h2> Game </h2>
   <h3> {{ game.title }} </h3>
 
-  <tr ng-repeat="row in game.rows"> 
-    <td ng-repeat="card in row.cards"> 
-      <h1> {{card}} </h1>
-    </td>
-  </tr>
+  <table>
+    <tr ng-repeat="row in game.rows"> 
+      <td ng-repeat="card in row"> {{ card }} </td>
+    </tr>
+  </table>
 
-<!-- <h ng-repeat="row in game.rows"> {{ row }} </h> -->
-  
+
 
 </div>
