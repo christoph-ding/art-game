@@ -1,10 +1,5 @@
-angular.module('game', ['gamestarter'])
+angular.module('game', [])
 .controller('gameController', ['gamestarter', function(gamestarter) {
-  this.title = gamestarter.msg
-  this.rows = [
-    [ 0, 1, 2, 3, 4 ],
-    [ 5, 6, 7, 8, 9 ],
-    [ 10, 11, 12, 13, 14 ],
-    [ 15, 16, 17, 18, 19 ]
-    ];
+  this.rows = gamestarter.generateCards();
+  this.click = function () {console.log()};
 }])

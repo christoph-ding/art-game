@@ -1,10 +1,13 @@
 <div>
   <h2> Game </h2>
-  <h3> {{ game.title }} </h3>
 
   <table>
     <tr ng-repeat="row in game.rows"> 
-      <td ng-repeat="card in row"> {{ card }} </td>
+      <td ng-repeat="card in row">
+        <div ng-click="card.click()">
+        {{ card.id }}
+        </div>
+      </td>
     </tr>
   </table>
 
