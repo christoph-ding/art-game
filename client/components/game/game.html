@@ -1,11 +1,12 @@
 <div>
   <h2> Game </h2>
+  <h2> {{ game.playgame }} </h2>
 
   <table>
     <tr ng-repeat="row in game.rows"> 
       <td ng-repeat="card in row">
-        <div ng-click="card.click()">
-        {{ card.id }}
+        <div class='card' ng-click="card.click()">
+        {{ card.flipped }}
         </div>
       </td>
     </tr>
