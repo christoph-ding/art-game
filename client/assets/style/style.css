@@ -7,13 +7,13 @@ h2 {
 }
 
 h3 {
-  background-color: #F6CA83
+  background-color: #F6CA83;
 }
 
-.card {
- background-color: #F6CA83  
+.flipped {
+  background-color: #F6CA83;
 }
 
-.back {
-  color:blue;
+.not {
+  background-color: red;
 }
