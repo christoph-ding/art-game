@@ -1,5 +1,12 @@
 angular.module('game', [])
-.controller('gameController', ['gamestarter', 'playgame', function(gamestarter, playgame) {
-  this.rows = gamestarter.generateCards();
-  this.playgame = playgame.msg;
+.controller('gameController', ['gamestarter', 'cardTracker', function(gamestarter, cardTracker) {
+  this.board = gamestarter.generateBoard();
+  this.tracker = cardTracker.generateTracker();
+
+  this.flipCard = function(card) {
+    card.flip();
+    this.tracker.doSomething(card);
+
+  }
+
 }])

@@ -1,12 +1,11 @@
 <div>
   <h2> Game </h2>
-  <h2> {{ game.playgame }} </h2>
 
   <table>
     <!-- Construct the grid from cards in memory -->
-    <tr ng-repeat="row in game.rows"> 
+    <tr ng-repeat="row in game.board"> 
       <td ng-repeat="card in row">
-        <div class="card {{card.flipped ? 'flipped' : 'not'}}" ng-click="card.click()">
+        <div class="card {{card.flipped ? 'flipped' : 'not'}}" ng-click="game.flipCard(card)">
         </div>
       </td>
     </tr>
