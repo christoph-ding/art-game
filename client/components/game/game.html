@@ -3,10 +3,10 @@
   <h2> {{ game.playgame }} </h2>
 
   <table>
+    <!-- Construct the grid from cards in memory -->
     <tr ng-repeat="row in game.rows"> 
       <td ng-repeat="card in row">
-        <div class="{{card.flipped ? 'flipped' : 'not'}}" ng-click="card.click()">
-        {{ card.flipped }}
+        <div class="card {{card.flipped ? 'flipped' : 'not'}}" ng-click="card.click()">
         </div>
       </td>
     </tr>

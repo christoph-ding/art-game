@@ -10,10 +10,17 @@ h3 {
   background-color: #F6CA83;
 }
 
-.flipped {
-  background-color: #F6CA83;
+.card {
+  width: 63px;
+  height: 100px;
 }
 
 .not {
+  background-color: #F6CA83;
+  background-image: url("https://s-media-cache-ak0.pinimg.com/236x/bd/d7/5b/bdd75b6876e384a1ba5e0ddceec394d0.jpg");
+  background-size: cover;
+}
+
+.flipped {
   background-color: red;
 }
