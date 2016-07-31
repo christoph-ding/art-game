@@ -1,11 +1,12 @@
 <div>
   <h2> Game </h2>
-
+  <h3> {{ game.tracker.score }} </h3>
   <table>
     <!-- Construct the grid from cards in memory -->
     <tr ng-repeat="row in game.board"> 
       <td ng-repeat="card in row">
-        <div class="card {{card.flipped ? 'flipped' : 'not'}}" ng-click="game.flipCard(card)">
+        <div class="card {{card.faceShowing ? 'faceShowing' : 'not'}}" ng-click="game.flipCard(card)">
+        {{ card.id }}
         </div>
       </td>
     </tr>
