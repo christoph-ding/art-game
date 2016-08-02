@@ -1,14 +1,16 @@
 angular.module('game', [])
 .controller('gameController', function(gamestarter, cardTracker) {
-  this.board = gamestarter.generateBoard(3,5);
-  this.tracker = cardTracker.generateTracker();
+  var game = this;
 
-  this.flipCard = function(card) {
+  game.board = gamestarter.generateBoard(3,5);
+  game.tracker = cardTracker.generateTracker();
+
+  game.flipCard = function(card) {
     // we will not flip cards if the game is 'processing' result
     // we will not allow players to flip the same card
-    if (this.tracker.playerCanControl && card != this.tracker.currentlyShowing) {
+    if (game.tracker.playerCanControl && card != game.tracker.currentlyShowing) {
       card.flip();
-      this.tracker.doSomething(card);
+      game.tracker.doSomething(card);
     }
   }
 
