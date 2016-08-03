@@ -17,6 +17,10 @@ app.get('/images', function(req, res) {
   // we read the image names, then send that back
   fs.readdir(path.join(__dirname + '/../client/assets/images/hiroshige'), function(err, files) {
     if (err) { console.log(err); }
-    res.send(files);
+    // filter files so we do not send hidden . files, such as .DS_Store
+    filteredFiles = files.filter(function(file) {
+      return file.charAt(0) !== '.';
+    })
+    res.send(filteredFiles);
   });
 });
