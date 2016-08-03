@@ -1,8 +1,11 @@
 <div>
   <h2> Gallery </h2>
+  <h3> {{ gallery.map }} </h3>
+  <h3> {{ gallery.deck }} </h3>
+
 
   <div ng-repeat="image in gallery.images">
-    <img src="{{ image }}" width=55% height=55%>
+    <img ng-src="{{ image }}" width=55% height=55%>
   </div>
 
 </div>

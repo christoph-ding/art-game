@@ -19,6 +19,7 @@ angular.module('gamePlayer', [])
   function card(id) {
     this.id = id;
     this.faceShowing = false;
+    this.imageId = null;
     this.flip = function() {
       if (!this.faceShowing) {
           this.faceShowing = true;

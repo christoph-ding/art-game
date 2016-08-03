@@ -1,17 +1,21 @@
 angular.module('gallery', [])
 .controller('galleryController', function(imageFetcher) {
   var gallery = this;
+  var imageDir = '/assets/images/hiroshige'
+  gallery.deck = [ { 'id': 1 }, { 'id': 2 }, { 'id': 3 },
+               { 'id': 4 }, { 'id': 5 }, { 'id': 6 },
+               { 'id': 7 }, { 'id': 8 }, { 'id': 9 },
+               { 'id': 10 }, { 'id': 11 }, { 'id': 12 }
+             ]
 
-  gallery.images = [];
-
-  imageFetcher.getImage()
-    .then(function(response) {
-      for (var i = 0; i < response.data.length; i++) {
-        // let's not add the .DS Store
-        if (response.data[i].charAt(0) != '.') {
-          file = '/assets/images/hiroshige/' + response.data[i];
-          gallery.images.push(file);
-        }
-      }
+  imageFetcher.fetchImages()
+    .then(function(files) {
+      gallery.map = imageFetcher.generateMap(files.data, gallery.deck.length / 2);
     })
+    .then(function() {
+      imageFetcher.attachImagesToCards(gallery.deck, gallery.map);
+      console.log(gallery.deck);
+    })
+
+
 })
