@@ -1,25 +1,34 @@
 angular.module('gamePlayer', [])
 .service('gamestarter', function() {
 
-  this.generateBoard = function(gridHeight, gridWidth) {
+  this.generateBoard = function(gridHeight, gridWidth, deck) {
     // for now, we generate a set number of rows and columns
     // later, we will have those be inputs
     var board = [];
-    for (row = 1; row < gridHeight + 1; row++) {
+    for (row = 0; row < gridHeight; row++) {
       var currentRow = [];
-      for (column = 1; column < gridWidth + 1; column++) {
-        id = (row - 1) * gridWidth + column;
-        currentRow.push(new card(id));
+      for (column = 0; column < gridWidth; column++) {
+        id = (row * gridWidth) + column;
+        currentRow.push(deck[id]);
       }
       board.push(currentRow);
     }
     return board;
   }
 
+  this.generateDeck = function(cards) {
+    var deck = [];
+    for (var i=1; i<= cards; i++) {
+      deck.push(new card(i))
+    }
+    return deck;    
+  }
+
   function card(id) {
     this.id = id;
     this.faceShowing = false;
-    this.imageId = null;
+    this.image = null;
+    this.attr = 'http://www.extinctionsymbol.info/Symbol1.jpg';
     this.flip = function() {
       if (!this.faceShowing) {
           this.faceShowing = true;

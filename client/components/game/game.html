@@ -1,13 +1,19 @@
 <div>
   <h2> Game </h2>
   <h3> {{ game.tracker.score }} </h3>
+  <!-- <h3> {{ game.map }} </h3>
+  <h3> {{ game.deck }} </h3> -->
+
   <table>
     <!-- Construct the grid from cards in memory -->
     <tr ng-repeat="row in game.board"> 
       <td ng-repeat="card in row">
-        <div class="card {{card.faceShowing ? 'faceShowing' : 'not'}}" ng-click="game.flipCard(card)">
+        <!-- <div background="{{card.image}}"class="card {{card.faceShowing ? 'faceShowing' : 'not'}}" ng-click="game.flipCard(card)">
+        {{ card.id }} -->
+        <!-- <div ng-style="{'background-image': url(http://www.extinctionsymbol.info/Symbol1.jpg)}" class="card">
+        {{ card.id }} -->
+        <div nstyle="'background-image': url('http://www.extinctionsymbol.info/Symbol1.jpg')" class="card">
         {{ card.id }}
-        </div>
       </td>
     </tr>
   </table>
