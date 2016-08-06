@@ -11,19 +11,14 @@ h3 {
 }
 
 .card {
-  /*width: 88px;
-  height: 140px;*/
-  width: 200px;
-  height: 300px;
-  /*background-image: url("/assets/images/hiroshige/martinmunkasci.jpg");*/
+  width: 132px;
+  height: 210px;
 }
 
 .not {
-  background-color: blue;
 }
 
 .faceShowing {
-  /*background-color: #CAFFD0;*/
   border: 1px solid #23395B;
   box-sizing: border-box;
 }

@@ -28,10 +28,15 @@
         {{ card.image }}
         </div> -->
 
-        <div class="card" style=" background-image: url('{{ card.image }}') " >
-        </div>
+        <!-- <div class="card" style=" background-image: url('{{ card.image }}') " >
+        </div> -->
 
-        
+        <!-- <div class="card" style="{{ card.faceShowing ? ' background-color: red' : 'background-color: blue' }}" ng-click="game.flipCard(card)">
+          {{card.faceShowing}}
+        </div> -->
+
+        <div class="card {{card.faceShowing ? 'faceShowing' : 'not'}}" style="{{ card.getStyle() }}" ng-click="game.flipCard(card)">
+        </div>
 
       </td>
     </tr>

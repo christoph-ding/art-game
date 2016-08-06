@@ -31,11 +31,14 @@ angular.module('gamePlayer', [])
     this.flip = function() {
       if (!this.faceShowing) {
           this.faceShowing = true;
-          console.log(this.getImage());
       }
     }
-    this.getImage = function() {
-      return this.image;
+    this.getStyle = function() {
+      if (this.faceShowing == false) {
+        return 'background-color: blue';
+      } else {
+        return 'background-image: url(' + '"' + this.image + '"' + ') '
+      }
     }
   }
 })
