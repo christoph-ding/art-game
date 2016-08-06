@@ -19,10 +19,11 @@ h3 {
 }
 
 .not {
+  background-color: blue;
 }
 
 .faceShowing {
-  background-color: #CAFFD0;
+  /*background-color: #CAFFD0;*/
   border: 1px solid #23395B;
   box-sizing: border-box;
 }

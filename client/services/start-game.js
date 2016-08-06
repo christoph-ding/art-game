@@ -28,12 +28,14 @@ angular.module('gamePlayer', [])
     this.id = id;
     this.faceShowing = false;
     this.image = null;
-    this.test = '/assets/images/hiroshige/martinmunkasci.jpg';
     this.flip = function() {
       if (!this.faceShowing) {
           this.faceShowing = true;
-          console.log(this.image);
+          console.log(this.getImage());
       }
+    }
+    this.getImage = function() {
+      return this.image;
     }
   }
 })
