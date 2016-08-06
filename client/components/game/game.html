@@ -1,8 +1,8 @@
 <div>
   <h2> Game </h2>
-  <h3> {{ game.tracker.score }} </h3>
-  <!-- <h3> {{ game.map }} </h3>
-  <h3> {{ game.deck }} </h3> -->
+<!--   <h3> {{ game.tracker.score }} </h3>
+  <h3> map {{ game.map }} </h3>
+  <h3> deck{{ game.deck }} </h3> -->
 
   <table>
     <!-- Construct the grid from cards in memory -->
@@ -10,10 +10,25 @@
       <td ng-repeat="card in row">
         <!-- <div background="{{card.image}}"class="card {{card.faceShowing ? 'faceShowing' : 'not'}}" ng-click="game.flipCard(card)">
         {{ card.id }} -->
-        <!-- <div ng-style="{'background-image': url(http://www.extinctionsymbol.info/Symbol1.jpg)}" class="card">
-        {{ card.id }} -->
-        <div nstyle="'background-image': url('http://www.extinctionsymbol.info/Symbol1.jpg')" class="card">
-        {{ card.id }}
+
+        <!-- <div class="card" ng-style="{'background-color': '{{ card.color }}'}">
+        {{ card. color }}
+        </div> -->
+
+        <!-- <div class="card" ng-style="{'background-image': 'url(/assets/images/hiroshige/martinmunkasci.jpg)'}">
+        {{ card. color }}
+        </div> -->
+
+        <!-- <div class="card" ng-style="{'background-image': 'url({{ card.test }})'}">
+        </div> -->
+
+        <!-- <div class="card">
+          <img ng-src="{{ card.image }}" width=100% height=100%>
+        </div> -->
+
+        <div class="card" ng-style="{'background-image': 'url({{card.image}})'}">
+        </div>
+
       </td>
     </tr>
   </table>
