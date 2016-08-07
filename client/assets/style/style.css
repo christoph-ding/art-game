@@ -1,14 +1,37 @@
 h1 {
-  background-color: blue;
 }
 
 h2 {
-  background-color: #35CE8D;
 }
 
 h3 {
-  background-color: #F6CA83;
 }
+
+ul {
+  list-style-type: none;
+  width: 200px;
+  margin: 0;
+  padding: 0;
+  background-color: #f1f1f1;
+}
+
+li a {
+  display: block;
+  color: #000;
+  padding: 8px 16px;
+}
+
+li a:hover:not(.active) {
+  background-color: #555;
+  color: white;
+}
+
+li a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+
 
 .card {
   width: 132px;
