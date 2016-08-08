@@ -21,7 +21,7 @@ angular.module('game', [])
     // we will not allow players to flip the same card
     if (game.tracker.playerCanControl && card != game.tracker.currentlyShowing) {
       card.flip();
-      game.tracker.doSomething(card);
+      game.tracker.calculateScore(card);
     }
   }
 

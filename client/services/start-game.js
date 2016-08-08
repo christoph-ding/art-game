@@ -1,6 +1,5 @@
 angular.module('gamePlayer', [])
 .service('gamestarter', function() {
-
   this.generateBoard = function(gridHeight, gridWidth, deck) {
     // for now, we generate a set number of rows and columns
     // later, we will have those be inputs
@@ -15,7 +14,6 @@ angular.module('gamePlayer', [])
     }
     return board;
   }
-
   this.generateDeck = function(cards) {
     var deck = [];
     for (var i=1; i<= cards; i++) {
@@ -23,7 +21,6 @@ angular.module('gamePlayer', [])
     }
     return deck;    
   }
-
   function card(id) {
     this.id = id;
     this.faceShowing = false;
@@ -44,7 +41,6 @@ angular.module('gamePlayer', [])
 })
 
 .service('cardTracker', function($timeout) {
-
   this.generateTracker = function() {
     function tracker() {
       this.score = 0;
@@ -52,7 +48,7 @@ angular.module('gamePlayer', [])
       // is there already a card that has been flipped?
       this.currentlyShowing = false;
 
-      this.doSomething = function(card) {
+      this.calculateScore = function(card) {
         // when there are no cards showing, we simply have a showing card
         if (!this.currentlyShowing) {
           this.currentlyShowing = card;
