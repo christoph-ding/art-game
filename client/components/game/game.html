@@ -1,37 +1,16 @@
 <div>
   <table>
     <!-- Construct the grid from cards in memory -->
+    <div class='game container'> 
+      <h3 class='index'> Color-Scheme </h3>
+      <div class='swatch one'> </div>
+      <div class='swatch two'> </div>
+      <div class='swatch three'> </div>
+    </div>
+
     <tr ng-repeat="row in game.board"> 
-      <td ng-repeat="card in row">
-        <!-- <div class="card {{card.faceShowing ? 'faceShowing' : 'not'}}" ng-click="game.flipCard(card)">
-        {{ card.id }}
-        </div> -->
-
-        <!-- <div class="card" ng-style="{'background-color': '{{ card.color }}'}">
-        {{ card. color }}
-        </div> -->
-
-        <!-- <div class="card" ng-style="{'background-image': 'url(/assets/images/hiroshige/martinmunkasci.jpg)'}">
-        {{ card. color }}
-        </div> -->
-
-        <!-- <div class="card">
-          <img ng-src="{{ card.image }}" width=100% height=100%>
-        </div> -->
-
-        <!-- <div class="card" ng-style="{'background-image': 'url({{card.image}})'}">
-        {{ card.image }}
-        </div> -->
-
-        <!-- <div class="card" style=" background-image: url('{{ card.image }}') " >
-        </div> -->
-
-        <!-- <div class="card" style="{{ card.faceShowing ? ' background-color: red' : 'background-color: blue' }}" ng-click="game.flipCard(card)">
-          {{card.faceShowing}}
-        </div> -->
-
-        <div class="card {{card.faceShowing ? 'faceShowing' : 'not'}}" style="{{ card.getStyle() }}" ng-click="game.flipCard(card)">
-        </div>
+      <div class="card {{card.faceShowing ? 'faceShowing' : 'not'}}" style="{{ card.getStyle() }}" ng-click="game.flipCard(card)">
+      </div>
 
       </td>
     </tr>

@@ -50,3 +50,65 @@ li a:active{
   border: 1px solid #23395B;
   box-sizing: border-box;
 }
+
+/* color swatches */
+.container {
+  overflow: auto;
+  width: 100%
+}
+
+.swatch{
+  width: 80px;
+  height: 44px;
+  float: left;
+  margin: 10px;
+}
+
+.cover .swatch.one{
+  background-color: blue;
+}
+
+.cover .swatch.two{
+  background-color: red;
+}
+
+.cover .swatch.three{
+  background-color: blue;
+}
+
+.gallery .swatch.one{
+  background-color: blue;
+}
+
+.gallery .swatch.two{
+  background-color: red;
+}
+
+.gallery .swatch.three{
+  background-color: blue;
+}
+
+.game .swatch.one{
+  background-color: blue;
+}
+
+.game .swatch.two{
+  background-color: red;
+}
+
+.game .swatch.three{
+  background-color: blue;
+}
+
+.about .swatch.one{
+  background-color: blue;
+}
+
+.about .swatch.two{
+  background-color: red;
+}
+
+.about .swatch.three{
+  background-color: blue;
+}
+/* */
