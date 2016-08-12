@@ -64,51 +64,51 @@ li a:active{
   margin: 10px;
 }
 
-.cover .swatch.one{
-  background-color: blue;
-}
-
-.cover .swatch.two{
-  background-color: red;
-}
-
-.cover .swatch.three{
-  background-color: blue;
-}
-
 .gallery .swatch.one{
-  background-color: blue;
+  background-color: #F79256;
 }
 
 .gallery .swatch.two{
-  background-color: red;
+  background-color: #D66D74;
 }
 
 .gallery .swatch.three{
-  background-color: blue;
+  background-color: #FFFCF2;
+}
+
+.cover .swatch.one{
+  background-color: #FFBBA1;
+}
+
+.cover .swatch.two{
+  background-color: #FFCFBC;
+}
+
+.cover .swatch.three{
+  background-color: #FFE3D8;
 }
 
 .game .swatch.one{
-  background-color: blue;
+  background-color: #EDDDD4;
 }
 
 .game .swatch.two{
-  background-color: red;
+  background-color: #D36E2B;
 }
 
 .game .swatch.three{
-  background-color: blue;
+  background-color: #FDCF46;
 }
 
 .about .swatch.one{
-  background-color: blue;
+  background-color: #80CED7;
 }
 
 .about .swatch.two{
-  background-color: red;
+  background-color: #003249;
 }
 
 .about .swatch.three{
-  background-color: blue;
+  background-color: #7880BC;
 }
 /* */
