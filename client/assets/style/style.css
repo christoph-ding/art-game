@@ -38,6 +38,28 @@ li a:active{
   color: blue;
 }
 
+/* Cover */
+.screen {
+  width: 80%;
+  height: 300px;
+  min-width: 483px;
+  margin: 5% 5% 10% 10%;
+}
+
+.one {
+  background-color: #FFBBA1;
+}
+
+.two {
+  background-color: #FFCFBC;
+}
+
+.three {
+  background-color: #FFE3D8;
+}
+
+/* Game */
+
 .card {
   width: 132px;
   height: 210px;
@@ -76,17 +98,7 @@ li a:active{
   background-color: #FFFCF2;
 }
 
-.cover .swatch.one{
-  background-color: #FFBBA1;
-}
 
-.cover .swatch.two{
-  background-color: #FFCFBC;
-}
-
-.cover .swatch.three{
-  background-color: #FFE3D8;
-}
 
 .game .swatch.one{
   background-color: #EDDDD4;
