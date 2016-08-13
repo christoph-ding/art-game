@@ -60,12 +60,19 @@ li a:active{
 
 /* Game */
 
+.board {
+  margin: 5% 5% 10% 10%;
+  border-spacing: 18px;
+}
+
 .card {
   width: 132px;
   height: 210px;
 }
 
 .not {
+  background-image: url("../../assets/card-back.jpg");
+  background-size: cover;
 }
 
 .faceShowing {

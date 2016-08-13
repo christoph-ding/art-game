@@ -1,6 +1,4 @@
 <div>
-  <table>
-    <!-- Construct the grid from cards in memory -->
     <div class='game container'> 
       <h3 class='index'> Color-Scheme </h3>
       <div class='swatch one'> </div>
@@ -8,6 +6,8 @@
       <div class='swatch three'> </div>
     </div>
 
+  <table class='board'>
+    <!-- Construct the grid from cards in memory -->
     <tr ng-repeat="row in game.board"> 
       <td ng-repeat="card in row">
       <div class="card {{card.faceShowing ? 'faceShowing' : 'not'}}" style="{{ card.getStyle() }}" ng-click="game.flipCard(card)">
