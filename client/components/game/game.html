@@ -10,8 +10,8 @@
     <!-- Construct the grid from cards in memory -->
     <tr ng-repeat="row in game.board"> 
       <td ng-repeat="card in row">
-      <div class="card {{card.faceShowing ? 'faceShowing' : 'not'}}" style="{{ card.getStyle() }}" ng-click="game.flipCard(card)">
-      </div>
+        <div class="card {{card.faceShowing ? 'faceShowing' : 'not'}}" style="{{ card.getStyle() }}" ng-click="game.flipCard(card)">
+        </div>
       </td>
     </tr>
   </table>

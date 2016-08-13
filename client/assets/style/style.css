@@ -46,20 +46,19 @@ li a:active{
   margin: 5% 5% 10% 10%;
 }
 
-.one {
+.cover .one {
   background-color: #FFBBA1;
 }
 
-.two {
+.cover .two {
   background-color: #FFCFBC;
 }
 
-.three {
+.cover .three {
   background-color: #FFE3D8;
 }
 
 /* Game */
-
 .board {
   margin: 5% 5% 10% 10%;
   border-spacing: 18px;
@@ -80,6 +79,40 @@ li a:active{
   box-sizing: border-box;
 }
 
+.game .one {
+  background-color: #EDDDD4;
+}
+
+.game .two{
+  background-color: #D36E2B;
+}
+
+.game .three{
+  background-color: #FDCF46;
+}
+
+/* Gallery */
+.painting {
+  margin: 2%;
+}
+
+.gallery .one{
+  background-color: #F79256;
+}
+
+.gallery .two{
+  background-color: #D66D74;
+}
+
+.gallery .three{
+  background-color: #FFFCF2;
+}
+
+.painting {
+  height: 100px;
+  background-color: blue;
+}
+
 /* color swatches */
 .container {
   overflow: auto;
@@ -91,32 +124,6 @@ li a:active{
   height: 44px;
   float: left;
   margin: 10px;
-}
-
-.gallery .swatch.one{
-  background-color: #F79256;
-}
-
-.gallery .swatch.two{
-  background-color: #D66D74;
-}
-
-.gallery .swatch.three{
-  background-color: #FFFCF2;
-}
-
-
-
-.game .swatch.one{
-  background-color: #EDDDD4;
-}
-
-.game .swatch.two{
-  background-color: #D36E2B;
-}
-
-.game .swatch.three{
-  background-color: #FDCF46;
 }
 
 .about .swatch.one{
