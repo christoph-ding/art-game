@@ -67,6 +67,9 @@ li a:active{
 .card {
   width: 132px;
   height: 210px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .not {
@@ -92,8 +95,12 @@ li a:active{
 }
 
 /* Gallery */
-.painting {
+.image {
   margin: 2%;
+  height: 500px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .gallery .one{
