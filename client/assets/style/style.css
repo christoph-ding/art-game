@@ -6,13 +6,8 @@ html, body {
   font-family: 'Raleway', sans-serif;
 }
 
-h1 {
-}
-
-h2 {
-}
-
-h3 {
+* {
+  box-sizing: border-box;
 }
 
 /* the top bar*/
@@ -28,14 +23,36 @@ h3 {
   box-shadow:0px 1px 5px #FFDD4A;
 }
 
+.nav-bar {
+  margin: 0;
+  padding: 0;
+
+  display: table-cell;
+  overflow: hidden;
+  list-style-type: none;  
+}
+
+a {
+  height: 85px;
+  line-height: 85px;
+
+  margin: 0;
+  padding: 18px;
+  
+  text-decoration: none;
+  color: #000;
+  transition: 0.4s;
+}
+
 .logo {
   display: table-cell;
   vertical-align: middle;
 
   height: 85px;
-  width: 200px;
+  width: 260px;
 
   margin: 0;
+  padding: 0px 30px 0px 30px;
 
   font-size: 32px;
   text-align: center;
@@ -46,46 +63,24 @@ h3 {
   color: #FF1053;
 }
 
-.nav-bar {
-  margin: 0;
-  padding: 0;
-
-  display: table-cell;
-  overflow: hidden;
-  list-style-type: none;  
+.nav-bar a:hover:not(.active) {
+  color: #FFDD4A;
 }
 
-li {
+.nav-bar li {
   float: left;
 
-  padding: 0;
+  padding: 0 40px 0 0;
   margin: 0;
 
   font-size: 18px;
 }
 
-a {
-  height: 85px;
-  line-height: 85px;
-
-  margin: 0 10px 0 10px;
-  padding: 10px;
-  
-  text-decoration: none;
-  color: #000;
-  transition: 0.4s;
-}
-
-a:hover:not(.active) {
-  color: #FFDD4A;
+.nav-bar a {
+  padding: 0;
 }
 
 /* Ui-View */
-.header-bar {
-  position: relative;
-  height: 125px;
-}
-
 
 .view-container {
   height: 100%;
@@ -103,8 +98,24 @@ a:hover:not(.active) {
   padding: 0;
 }
 
+.header-bar {
+  position: relative;
+  height: 125px;
+}
+
+.header-text {
+  position: absolute;
+  padding: 0;
+  margin: 0;
+  height: 125px;
+  line-height: 125px;
+  width: 100%;
+  top: 0;
+  text-align: center;
+}
+
 /* colors */
 .one {
   background-color: #FFBBA1;
 }
-/* */
+
