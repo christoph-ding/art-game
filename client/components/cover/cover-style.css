@@ -1,0 +1,19 @@
+/* Cover */
+.screen {
+  width: 80%;
+  height: 300px;
+  min-width: 483px;
+  margin: 5% 5% 10% 10%;
+}
+
+.cover .one {
+  background-color: #FFBBA1;
+}
+
+.cover .two {
+  background-color: #FFCFBC;
+}
+
+.cover .three {
+  background-color: #FFE3D8;
+}

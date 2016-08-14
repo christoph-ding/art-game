@@ -1,0 +1,35 @@
+/* Game */
+.board {
+  margin: 5% 5% 10% 10%;
+  border-spacing: 18px;
+}
+
+.card {
+  width: 132px;
+  height: 210px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.not {
+  background-image: url("../../assets/card-back.jpg");
+  background-size: cover;
+}
+
+.faceShowing {
+  border: 1px solid #23395B;
+  box-sizing: border-box;
+}
+
+.game .one {
+  background-color: #EDDDD4;
+}
+
+.game .two{
+  background-color: #D36E2B;
+}
+
+.game .three{
+  background-color: #FDCF46;
+}

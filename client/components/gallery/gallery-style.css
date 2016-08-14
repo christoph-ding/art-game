@@ -1,0 +1,25 @@
+/* Gallery */
+.image {
+  margin: 2%;
+  height: 500px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.gallery .one{
+  background-color: #F79256;
+}
+
+.gallery .two{
+  background-color: #D66D74;
+}
+
+.gallery .three{
+  background-color: #FFFCF2;
+}
+
+.painting {
+  height: 100px;
+  background-color: blue;
+}
