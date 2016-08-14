@@ -7,6 +7,6 @@ angular.module('gallery', [])
   imageFetcher.fetchImages()
     .then(function(files) {
       console.log(files);
-      gallery.collection = files.data;
+      gallery.collection = imageFetcher.generateCollectionOfImages(files.data, imagesDir);
   })
 })
