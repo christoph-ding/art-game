@@ -1,7 +1,12 @@
 <div class='gallery inner-view'>
+
+  <div class='header-bar'>
+  </div>
+
   <div class="image" ng-repeat="image in gallery.collection" style=
   "background-image: url('{{image.imageURL}}')">
     <!-- <img ng-src="{{ card.image }}" height=200px> -->
       {{image.imageTitle}}
   </div>
+  
 </div>
