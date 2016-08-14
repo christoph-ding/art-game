@@ -1,12 +1,13 @@
-<div class='gallery'>
-  <div class='gallery container'> 
+<div class='gallery inner-view'>
+  <div class='gallery swatch-list'> 
     <h3 class='index'> Color-Scheme </h3>
     <div class='swatch one'> </div>
     <div class='swatch two'> </div>
     <div class='swatch three'> </div>
   </div>
-  <div class="painting" ng-repeat="painting in gallery.collection">
+  <div class="image" ng-repeat="image in gallery.collection" style=
+  "background-image: url('{{image.imageURL}}')">
     <!-- <img ng-src="{{ card.image }}" height=200px> -->
-      Image
+      {{image.imageTitle}}
   </div>
 </div>

@@ -1,3 +1,8 @@
+html, body {
+margin:0;
+padding:0;
+}
+
 h1 {
 
 }
@@ -9,32 +14,25 @@ h3 {
 }
 
 /* the top bar*/
-
 .banner {
   display: table;
   background-color: #FDCF46;
   height: 75px;
   width: 100%;
+  margin: 0;
 }
 
 .logo {
   display: table-cell;
-  height:100%;
-  width: 13%;
+  height: 100%;
+  width: 180px;
   margin: 0;
   vertical-align: middle;
-  text-align: center;
-}
-
-.logo a {
-  text-decoration: none;
-  color: #000;
 }
 
 .nav-bar {
   display: table-cell;
   list-style-type: none;  
-  width: 50%;
   margin: 0;
   padding: 0;
   overflow: hidden;
@@ -46,7 +44,7 @@ li {
   margin: 0;
 }
 
-li a {
+a {
   text-decoration: none;
   color: #000;
   transition: 0.5s;
@@ -56,8 +54,17 @@ li a {
   line-height: 75px;
 }
 
-li a:hover:not(.active) {
+a:hover:not(.active) {
   background-color: #F79256;
+}
+
+/* Ui-View */
+.view-container {
+
+}
+
+.inner-view {
+  margin-left: 4%;
 }
 
 /* Cover */
@@ -78,6 +85,20 @@ li a:hover:not(.active) {
 
 .cover .three {
   background-color: #FFE3D8;
+}
+
+/* About */
+
+.about .one{
+  background-color: #80CED7;
+}
+
+.about .two{
+  background-color: #003249;
+}
+
+.about .three{
+  background-color: #7880BC;
 }
 
 /* Game */
@@ -143,7 +164,7 @@ li a:hover:not(.active) {
 }
 
 /* color swatches */
-.container {
+.swatch-list {
   overflow: auto;
   width: 100%
 }
@@ -155,15 +176,4 @@ li a:hover:not(.active) {
   margin: 10px;
 }
 
-.about .swatch.one{
-  background-color: #80CED7;
-}
-
-.about .swatch.two{
-  background-color: #003249;
-}
-
-.about .swatch.three{
-  background-color: #7880BC;
-}
 /* */
