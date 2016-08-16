@@ -1,12 +1,13 @@
 <div class='gallery inner-view'>
 
   <div class='header-bar'>
+    <h1 class='header-text'> Image Set </h1>
   </div>
 
-  <div class="image" ng-repeat="image in gallery.collection" style=
-  "background-image: url('{{image.imageURL}}')">
-    <!-- <img ng-src="{{ card.image }}" height=200px> -->
-      {{image.imageTitle}}
+  <div class='grid-container'>
+    <div class='col image' ng-repeat="image in gallery.collection" style=
+      "background-image: url('{{image.imageURL}}')"> 
+    </div>
   </div>
-  
+
 </div>

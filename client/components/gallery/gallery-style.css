@@ -1,7 +1,6 @@
 /* Gallery */
 .image {
-  margin: 2%;
-  height: 500px;
+  height: 225px;
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -21,5 +20,14 @@
 
 .painting {
   height: 100px;
-  background-color: blue;
+}
+
+.grid-container {
+  display: grid;
+}
+
+.col {
+  width: 20%;
+  margin: 2%;
+  float: left;
 }
