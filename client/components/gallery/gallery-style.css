@@ -3,7 +3,7 @@
   height: 80px;
 
   width: 16%;
-  margin: 2%;
+  margin: 2%;m
   padding: 2%;
   float: left;
 
@@ -19,7 +19,21 @@
   opacity: 1; 
 }
 
-.modal {
+.hidden {
+  display: none;
+
   height: 300px;
   width: 300px;
+}
+
+.modal {
+  z-index: 1;
+
+  height: 100%;
+  width: 100%;
+
+  position: fixed;
+  left: 0px;
+  top: 0px
+  ;
 }
