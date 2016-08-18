@@ -4,6 +4,13 @@ angular.module('gallery', [])
   var imagesDir = '/assets/images/hiroshige/';
   gallery.collection = null;
 
+
+  gallery.focusModal = { msg: 'hello' };
+
+
+
+
+
   imageFetcher.fetchImages()
     .then(function(files) {
       console.log(files);

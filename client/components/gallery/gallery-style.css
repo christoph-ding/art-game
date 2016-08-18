@@ -1,8 +1,8 @@
 /* Gallery */
 .image {
-  height: 260px;
+  height: 80px;
 
-  width: 21%;
+  width: 16%;
   margin: 2%;
   padding: 2%;
   float: left;
@@ -11,16 +11,11 @@
   background-repeat: no-repeat;
   background-position: center;
 
-  transition: 0.9s;
+  opacity: 0.6; 
+  transition: 0.3s;
 }
 
 .image:hover:not(.active) {
-  height: 400px;
-  background-color: #F9E1DE;
+  opacity: 1; 
 }
 
-.grid-continer:after {
-  content: "";
-  display: table;
-  clear: both;
-}

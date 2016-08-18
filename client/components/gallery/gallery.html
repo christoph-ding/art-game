@@ -4,9 +4,13 @@
     <h1 class='header-text'> Image Set </h1>
   </div>
 
+  <div id="myModal" ng-model="gallery.focusModal">
+    {{ gallery.focusModal.msg }}
+  </div>
+
   <div class='grid-container'>
     <div class='image' ng-repeat="image in gallery.collection" style=
-      "background-image: url('{{image.imageURL}}')"> 
+      "background-image: url('{{image.imageURL}}')" ng-click="image.focus()"> 
     </div>
   </div>
 
