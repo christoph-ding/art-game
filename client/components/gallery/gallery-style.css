@@ -19,3 +19,7 @@
   opacity: 1; 
 }
 
+.modal {
+  height: 300px;
+  width: 300px;
+}

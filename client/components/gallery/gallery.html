@@ -5,12 +5,13 @@
   </div>
 
   <div id="myModal" ng-model="gallery.focusModal">
-    {{ gallery.focusModal.msg }}
+    <div class='modal' 
+         style="background-image: url('{{gallery.focusModal.url}}')"></div>
   </div>
 
   <div class='grid-container'>
     <div class='image' ng-repeat="image in gallery.collection" style=
-      "background-image: url('{{image.imageURL}}')" ng-click="image.focus()"> 
+      "background-image: url('{{image.URL}}')" ng-click="gallery.changeFocus(image)"> 
     </div>
   </div>
 

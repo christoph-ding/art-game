@@ -5,11 +5,15 @@ angular.module('gallery', [])
   gallery.collection = null;
 
 
-  gallery.focusModal = { msg: 'hello' };
+  gallery.focusModal = { 
+    msg: 'hello', 
+    url: 'http://image.flaticon.com/teams/1-freepik.jpg'
+    };
 
-
-
-
+  gallery.changeFocus = function(image) {
+    console.log(image.URL);
+    gallery.focusModal.url = image.URL;
+  }
 
   imageFetcher.fetchImages()
     .then(function(files) {
