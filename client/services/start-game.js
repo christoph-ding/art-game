@@ -24,7 +24,7 @@ angular.module('gamePlayer', [])
   function card(id) {
     this.id = id;
     this.faceShowing = false;
-    this.image = null;
+    this.URL = null;
     this.flip = function() {
       if (!this.faceShowing) {
           this.faceShowing = true;
@@ -34,7 +34,7 @@ angular.module('gamePlayer', [])
       if (this.faceShowing == false) {
         return 'background-color: blue';
       } else {
-        return 'background-image: url(' + '"' + this.image + '"' + ') '
+        return 'background-image: url(' + '"' + this.URL + '"' + ') '
       }
     }
   }
