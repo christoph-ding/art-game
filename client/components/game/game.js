@@ -2,11 +2,11 @@ angular.module('game', [])
 .controller('gameController', function(gamestarter, cardTracker, imageFetcher) {
   var game = this;
 
-  game.deck = gamestarter.generateDeck(20);
-  game.board = gamestarter.generateBoard(4,5, game.deck);
+  game.deck = gamestarter.generateDeck(18);
+  game.board = gamestarter.generateBoard(3,6, game.deck);
   game.tracker = cardTracker.generateTracker();
 
-  var imagesDir = '/assets/images/hiroshige/';
+  var imagesDir = '/assets/images/icons/';
 
   imageFetcher.fetchImages()
     .then(function(files) {

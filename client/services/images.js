@@ -13,6 +13,10 @@ angular.module('curator', [])
     return map;
   }
   this.attachImagesToCards = function(deck, map, imagesDir) {
+    // shuffle the deck
+    deck.sort(function() {
+      return .5 - Math.random();
+    });
     var imageKey = 1;
     for (var i=0; i < deck.length; i+=2) {
       // we assign images to cards in pairs

@@ -1,13 +1,6 @@
 /* Game */
 .score-board {
-  position: absolute;
-  padding: 0;
-  margin: 0;
-  height: 125px;
-  line-height: 125px;
-  width: 100%;
-  top: 0;
-  text-align: center;
+  
 }
 
 .board {
