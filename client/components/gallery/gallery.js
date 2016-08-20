@@ -8,15 +8,16 @@ angular.module('gallery', [])
   gallery.focusModal = { 
     msg: 'hello', 
     url: 'http://image.flaticon.com/teams/1-freepik.jpg',
-    modelClass: 'hidden'
+    modelClass: 'hidden',
+    hide: function() {
+      this.modelClass = 'hidden';
+    }
   };
 
-  
   gallery.changeFocus = function(image) {
     console.log(image.URL);
     gallery.focusModal.url = image.URL;
-    gallery.focusModal.modelClass = 'modal'
-    // $window.alert('hello');
+    gallery.focusModal.modelClass = 'modal';
   };
 
   imageFetcher.fetchImages()

@@ -4,7 +4,7 @@
     <h1 class='header-text'> Image Set </h1>
   </div>
 
-  <div ng-class='gallery.focusModal.modelClass' ng-model="gallery.focusModal">
+  <div ng-class='gallery.focusModal.modelClass' ng-model="gallery.focusModal" ng-click="gallery.focusModal.hide()">
       <img class='modal-image' src='{{gallery.focusModal.url}}'>
   </div>
 
