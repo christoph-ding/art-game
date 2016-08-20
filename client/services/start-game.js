@@ -55,21 +55,28 @@ angular.module('gamePlayer', [])
         } else {
         // if there is a currently showing card, we compare against that card
           // a match
-          if (this.currentlyShowing.id > card.id) {
+          if (this.currentlyShowing.URL == card.URL) {
             // change score
             this.score++;
+            console.log(this.score);
+
+            // a match should keep up both cards forever...
+            this.currentlyShowing.faceShowing = true;
+            card.faceShowing = true;
+            this.currentlyShowing = false;
+          } else {
+            // not a match
+            // turn both cards downwards regardless
+            this.playerCanControl = false;
+            var tracker = this;
+            // we will take control away from player while she is looking at the cards
+            $timeout(function() {
+              tracker.currentlyShowing.faceShowing = false;
+              tracker.currentlyShowing = false;
+              card.faceShowing = false;
+              tracker.playerCanControl = true;
+            }, 1600);
           }
-          // not a match
-          // turn both cards downwards regardless
-          this.playerCanControl = false;
-          var tracker = this;
-          // we will take control away from player while she is looking at the cards
-          $timeout(function() {
-            tracker.currentlyShowing.faceShowing = false;
-            tracker.currentlyShowing = false;
-            card.faceShowing = false;
-            tracker.playerCanControl = true;
-          }, 1600);
         }
       }
     }
