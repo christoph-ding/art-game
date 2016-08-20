@@ -1,5 +1,5 @@
 angular.module('gallery', [])
-.controller('galleryController', function(imageFetcher) {
+.controller('galleryController', function(imageFetcher, $window) {
   var gallery = this;
   var imagesDir = '/assets/images/hiroshige/';
   gallery.collection = null;
@@ -16,6 +16,7 @@ angular.module('gallery', [])
     console.log(image.URL);
     gallery.focusModal.url = image.URL;
     gallery.focusModal.modelClass = 'modal'
+    // $window.alert('hello');
   };
 
   imageFetcher.fetchImages()

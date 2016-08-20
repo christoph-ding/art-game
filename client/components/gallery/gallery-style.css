@@ -1,9 +1,9 @@
 /* Gallery */
 .image {
   height: 80px;
-
   width: 16%;
-  margin: 2%;m
+  margin: 2%;
+
   padding: 2%;
   float: left;
 
@@ -13,6 +13,8 @@
 
   opacity: 0.6; 
   transition: 0.3s;
+
+  cursor: pointer;
 }
 
 .image:hover:not(.active) {
@@ -26,18 +28,23 @@
 .modal {
   z-index: 1;
 
-  height: 80%;
+  height: 100%;
   width: 100%;
 
   position: fixed;
   left: 0px;
-  top: 15%;
+  top: 85px;
 
   background-color: rgba(0,0,0,0.4);
+
+  overflow-y: scroll;
 }
 
 .modal-image {
-  height: 100px;
-  margin: 0px;
+  width: 50%;
+  min-width: 350px;
+  
+  margin: 10% auto;
+
   display: block;
 }
