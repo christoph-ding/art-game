@@ -1,10 +1,10 @@
 angular.module('game', [])
-.controller('gameController', function(gamestarter, cardTracker, imageFetcher) {
+.controller('gameController', function(getDeck, roundHandler, imageFetcher) {
   var game = this;
 
-  game.deck = gamestarter.generateDeck(18);
-  game.board = gamestarter.generateBoard(3,6, game.deck);
-  game.tracker = cardTracker.generateTracker();
+  game.deck = getDeck.generateDeck(18);
+  game.board = getDeck.generateBoard(3,6, game.deck);
+  game.roundHandler = roundHandler.generateRoundHandler();
 
   var imagesDir = '/assets/images/icons/';
 
@@ -19,9 +19,9 @@ angular.module('game', [])
   game.flipCard = function(card) {
     // we will not flip cards if the game is 'processing' result
     // we will not allow players to flip the same card
-    if (game.tracker.playerCanControl && card != game.tracker.currentlyShowing) {
+    if (game.roundHandler.playerCanControl && card != game.roundHandler.currentlyShowing) {
       card.flip();
-      game.tracker.calculateScore(card);
+      game.roundHandler.processPlayerChoice(card);
     }
   }
 
