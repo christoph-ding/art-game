@@ -23,8 +23,9 @@
   background-size: cover;
 }
 
-.faceShowing {
+.revealed {
   /*border: 1px solid #23395B;*/
+  background-color: #FFD464;
   box-shadow:0px 1px 1px #B8860B;
   box-sizing: border-box;
 }

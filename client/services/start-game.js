@@ -14,24 +14,26 @@ angular.module('gamePlayer', [])
     }
     return board;
   }
+
   this.generateDeck = function(cards) {
     var deck = [];
     for (var i=1; i<= cards; i++) {
-      deck.push(new card(i))
+      deck.push(new this.card(i))
     }
     return deck;    
   }
-  function card(id) {
+
+  this.card = function(id) {
     this.id = id;
-    this.faceShowing = false;
+    this.revealed = false;
     this.URL = null;
     this.flip = function() {
-      if (!this.faceShowing) {
-          this.faceShowing = true;
+      if (!this.revealed) {
+          this.revealed = true;
       }
     }
     this.getStyle = function() {
-      if (this.faceShowing == false) {
+      if (this.revealed == false) {
         return 'background-color: blue';
       } else {
         return 'background-image: url(' + '"' + this.URL + '"' + ') '
@@ -58,11 +60,9 @@ angular.module('gamePlayer', [])
           if (this.currentlyShowing.URL == card.URL) {
             // change score
             this.score++;
-            console.log(this.score);
-
             // a match should keep up both cards forever...
-            this.currentlyShowing.faceShowing = true;
-            card.faceShowing = true;
+            this.currentlyShowing.revealed = true;
+            card.revealed = true;
             this.currentlyShowing = false;
           } else {
             // not a match
@@ -71,14 +71,44 @@ angular.module('gamePlayer', [])
             var tracker = this;
             // we will take control away from player while she is looking at the cards
             $timeout(function() {
-              tracker.currentlyShowing.faceShowing = false;
+              tracker.currentlyShowing.revealed = false;
               tracker.currentlyShowing = false;
-              card.faceShowing = false;
+              card.revealed = false;
               tracker.playerCanControl = true;
             }, 1600);
           }
         }
       }
+
+      // this.handleRound = function() {
+      //   // check if there is already a card showing
+      //   if (!this.currentlyShowing) {
+      //     this.currentlyShowing = card;
+      //   } else {
+      //   // otherwise, compare current card to just flipped card
+      //   if 
+      //       // if cards Match:
+      //         // keepCardsUp
+      //         // resetRound...a different way
+
+      //       // otherwise:
+      //         // reset anyways
+
+
+
+
+      //   }
+      // }
+
+      this.cardsMatch = function(cardOne, cardTwo) {
+      } 
+
+      this.keepCardsUp = function(cardOne, cardTwo) {
+      }
+
+      this.resetRound = function() {
+      }
+
     }
     return new tracker();
   }

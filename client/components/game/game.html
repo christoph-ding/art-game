@@ -1,14 +1,15 @@
-i<div class='game inner-view'>
+<div class='game inner-view'>
 
   <div class='header-bar'>
     <h1 class='header-text score-board'> Score </h1>
+    <h1 ng-model='game.tracker'> {{ game.tracker.score }}</h1>
   </div>
 
   <table class='board'>
     <!-- Construct the grid from cards in memory -->
     <tr ng-repeat="row in game.board"> 
       <td ng-repeat="card in row">
-        <div class="card {{card.faceShowing ? 'faceShowing' : 'not'}}" style="{{ card.getStyle() }}" ng-click="game.flipCard(card)">
+        <div class="card {{card.revealed ? 'revealed' : 'not'}}" style="{{ card.getStyle() }}" ng-click="game.flipCard(card)">
         </div>
       </td>
     </tr>
