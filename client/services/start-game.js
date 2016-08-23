@@ -114,4 +114,5 @@ angular.module('gamePlayer', [])
       this.cardAlreadyRevealed = false;
     }
   }
+
 })
