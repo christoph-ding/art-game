@@ -24,3 +24,25 @@ app.get('/images', function(req, res) {
     res.send(filteredFiles);
   });
 });
+
+// post images
+app.post('/upload-images', function(req, res) {
+  console.log('upload-images');
+  res.send('upload-images');
+});
+
+// sign-in
+app.post('/sign-in', function(req, res) {
+  res.send('sign-in');
+});
+
+app.get('/sign-in', function(req, res) {
+  console.log('sign-in');
+  res.send('sign-in');
+});
+
+// sign-up
+app.post('/sign-up', function(req, res) {
+  console.log('sign-up');
+  res.send('sign-up');
+});
