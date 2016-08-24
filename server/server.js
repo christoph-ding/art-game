@@ -7,7 +7,6 @@ var fs = require('fs');
 var app = express();
 var port = 8000;
 app.listen(port);
-console.log('heyo!');
 
 // routing
 app.use(express.static(path.join(__dirname + '/../client')));
@@ -19,6 +18,7 @@ app.get('/images', function(req, res) {
     if (err) { console.log(err); }
     // filter files so we do not send hidden . files, such as .DS_Store
     filteredFiles = files.filter(function(file) {
+      console.log('fetching images');
       return file.charAt(0) !== '.';
     })
     res.send(filteredFiles);

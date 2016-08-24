@@ -14,14 +14,12 @@ angular.module('gallery', [])
   };
 
   gallery.changeFocus = function(image) {
-    console.log(image.URL);
     gallery.focusModal.url = image.URL;
     gallery.focusModal.modelClass = 'modal';
   };
 
   imageFetcher.fetchImages()
     .then(function(files) {
-      console.log(files);
       gallery.collection = imageFetcher.generateCollectionOfImages(files.data, imagesDir);
   });
 })

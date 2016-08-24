@@ -30,3 +30,11 @@ routerApp.config(function($stateProvider, $urlRouterProvider) {
         templateUrl: '/components/about/about.html'
       })
 })
+
+routerApp.run(function(imageFetcher) {
+  console.log('starting');
+  imageFetcher.fetchImages()
+    .then(function(files){
+      console.log(files);
+    })
+})
