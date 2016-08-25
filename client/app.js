@@ -32,9 +32,9 @@ routerApp.config(function($stateProvider, $urlRouterProvider) {
 })
 
 routerApp.run(function(imageFetcher) {
-  // console.log('starting');
-  // imageFetcher.fetchImages()
-  //   .then(function(files){
-  //     console.log(files);
-  //   })
+  console.log('starting');
+  imageFetcher.fetchImages()
+    .then(function(files){
+      console.log(files);
+    })
 })
