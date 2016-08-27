@@ -10,6 +10,7 @@ angular.module('curator', [])
     }
     return this.images;
   }
+  
   this.generateMap = function(files, pairs) {
     var map = {};
     var pairCounter = 1;
