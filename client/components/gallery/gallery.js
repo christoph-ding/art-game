@@ -1,7 +1,7 @@
 angular.module('gallery', [])
 .controller('galleryController', function(imageFetcher, $window) {
   var gallery = this;
-  var imagesDir = '/assets/images/icons/';
+  var imagesDir = '/assets/images/hiroshige/';
   gallery.collection = null;
 
   gallery.focusModal = { 

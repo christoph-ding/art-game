@@ -8,25 +8,31 @@ var app = express();
 var port = 8000;
 app.listen(port);
 
+var imagesDir = '/assets/images/hiroshige/';
+
 // routing
 app.use(express.static(path.join(__dirname + '/../client')));
 
 // get images
 app.get('/images', function(req, res) {
   // we read the image names, then send that back
-  fs.readdir(path.join(__dirname + '/../client/assets/images/icons'), function(err, files) {
+  fs.readdir(path.join(__dirname + '/../client/assets/images/hiroshige'), function(err, files) {
     if (err) { console.log(err); }
     // filter files so we do not send hidden . files, such as .DS_Store
-    filteredFiles = files.filter(function(file) {
+    images = files.filter(function(file) {
       return file.charAt(0) !== '.';
     })
-    res.send(filteredFiles);
+    // set each image name to the full path to that image
+    images.forEach(function(image, index, images) {
+      images[index] = path.join(imagesDir + image);
+    })
+    console.log(images);
+    res.send(images);
   });
 });
 
 // post images
 app.post('/upload-images', function(req, res) {
-  console.log('upload-images');
   res.send('upload-images');
 });
 
