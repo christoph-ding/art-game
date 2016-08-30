@@ -4,7 +4,9 @@ angular.module('game', [])
   var game = this;
 
   // get a deck of cards
+  game.deck = deckOfCards.getDeck(10);
   // get a board using that deck
+
   // get a roundHandler
     
   game.flipCard = function(card) {
