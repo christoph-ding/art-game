@@ -115,6 +115,8 @@ angular.module('gamePlayer', [])
         // compare cards
         var cardsMatch = this.compareCards(this.cardAlreadyRevealed, flippedCard);
 
+        // get the result of the round
+
         if (cardsMatch) {
           this.resolveMatch(this.cardAlreadyRevealed, flippedCard);
         } else {
@@ -124,6 +126,8 @@ angular.module('gamePlayer', [])
         }
         // reset the round after a brief time where user looks at both cards
         this.resetRound();
+
+        // return the result of the round
       }
     }
 
@@ -160,5 +164,25 @@ angular.module('gamePlayer', [])
       this.cardAlreadyRevealed = false;
     }
   }
+
+})
+
+.service('gameHandler', function() {
+
+  // generate a game handler
+
+
+  // Game Handler, which has
+    // score
+    // triesLeft
+
+
+  // calculate result
+    
+
+  // win action
+
+
+  // lose action
 
 })

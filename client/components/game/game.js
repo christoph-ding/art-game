@@ -9,12 +9,19 @@ angular.module('game', [])
   // get a roundHandler
   game.roundHandler = roundHandler.generateRoundHandler();
 
+
+
+
   game.flipCard = function(card) {
     // we will not flip cards if the game is 'processing' result
     // we will not allow players to flip the same card
     if (game.roundHandler.playerCanControl && card != game.roundHandler.currentlyShowing) {
       card.flip();
+
+      // handle the round, collect the result
       game.roundHandler.processPlayerChoice(card);
+
+      // 
     }
   }
 
