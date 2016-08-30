@@ -8,7 +8,7 @@ var app = express();
 var port = 8000;
 app.listen(port);
 
-var imagesDir = '/assets/images/hiroshige/';
+var imagesDir = '/../assets/images/hiroshige/';
 
 // routing
 app.use(express.static(path.join(__dirname + '/../client')));

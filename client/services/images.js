@@ -2,60 +2,20 @@ angular.module('curator', [])
 .service('imageFetcher', function($http) {
 
   // fetch a single set of images for the entire app
-  this.imagesDir = '/assets/images/hiroshige/';
-  this.images;
+  var images;
 
   this.fetchImages = function() {
-    if (! this.images) {
-      this.images = $http.get('/images');
+    if (!images) {
+      $http.get('/images')
+      .then(function(files) {
+        images = files.data;
+      })
     }
-    return this.images;
+    return images;
   }
   
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  //
+  
+  // 
   this.generateMap = function(files, pairs) {
     var map = {};
     var pairCounter = 1;

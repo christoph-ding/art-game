@@ -8,9 +8,5 @@ angular.module('cover', [])
     cover.counter = 0;
 
     imageFetcher.fetchImages()
-      .then(function(files) {
-        cover.images = files.data;
-      })
-
     // find a way to update the cover image on a timer
 })

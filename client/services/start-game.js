@@ -1,5 +1,59 @@
 angular.module('gamePlayer', [])
-.service('getDeck', function() {
+.service('deckOfCards', function(imageFetcher) {
+
+  var deck = [];
+
+  this.getDeck = function(size) {
+    if (!deck.length) {
+      var images = imageFetcher.fetchImages()
+      // call generate deck
+      // set deck to the return of deck
+    }
+    return deck;
+  }
+
+  function generateDeck(images, size) {
+    // check if there are enough images to make a game of the correct size
+
+    // if yes, then...
+      // randomly pick pairs of images from the imageset
+
+      // assign those images to pairs of cards
+
+      // don't return, all we do is change deck
+  }
+
+  function canMakeDeck(images, size) {
+
+    // returns bool
+  }
+
+  function attachImagesToCards(imageSubset) {
+
+    // returns a deck of pairs of cards
+  }
+
+  function shuffleDeck() {
+    // shuffles the main deck
+  }
+
+  var card = function(imageUrl) {
+    this.revealed = false;
+    this.URL = imageUrl;
+
+    // determines what happens when the card is clicked
+    this.flip = function() {
+      if (!this.revealed) {
+          this.revealed = true;
+      }
+    }
+    this.getStyle = function() {
+      if (this.revealed) {
+        return 'background-image: url(' + '"' + this.URL + '"' + ') '
+      }
+    }
+  }
+
   this.generateBoard = function(gridHeight, gridWidth, deck) {
     // for now, we generate a set number of rows and columns
     // later, we will have those be inputs
@@ -15,31 +69,6 @@ angular.module('gamePlayer', [])
     return board;
   }
 
-  this.generateDeck = function(cards) {
-    var deck = [];
-    for (var i=1; i<= cards; i++) {
-      deck.push(new card(i))
-    }
-    return deck;    
-  }
-
-  var card = function(id) {
-    this.id = id;
-    this.revealed = false;
-    this.URL = null;
-    this.flip = function() {
-      if (!this.revealed) {
-          this.revealed = true;
-      }
-    };
-    this.getStyle = function() {
-      if (this.revealed == false) {
-        return 'background-color: blue';
-      } else {
-        return 'background-image: url(' + '"' + this.URL + '"' + ') '
-      }
-    }
-  }
 })
 
 .service('roundHandler', function($timeout) {
