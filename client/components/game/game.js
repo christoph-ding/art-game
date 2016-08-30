@@ -4,8 +4,8 @@ angular.module('game', [])
   var game = this;
 
   // generate the deck, board and roundHandler neccesary to play game
-  game.deck = deckOfCards.getDeck(20);
-  game.board = deckOfCards.generateBoard(4, 5, game.deck);
+  game.deck = deckOfCards.getDeck(18);
+  game.board = deckOfCards.generateBoard(3, 6, game.deck);
   // get a roundHandler
   game.roundHandler = roundHandler.generateRoundHandler();
 
