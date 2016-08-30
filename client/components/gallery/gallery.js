@@ -1,10 +1,15 @@
 angular.module('gallery', [])
 .controller('galleryController', function(imageFetcher, $window) {
   var gallery = this;
-  var imagesDir = '/assets/images/hiroshige/';
+
+
   gallery.collection = null;
 
-  gallery.focusModal = { 
+  // fetch image with skinny controller
+
+
+  // make modal into a service
+  gallery.focusModal = {
     msg: 'hello', 
     url: '',
     modelClass: 'hidden',
@@ -18,8 +23,6 @@ angular.module('gallery', [])
     gallery.focusModal.modelClass = 'modal';
   };
 
-  imageFetcher.fetchImages()
-    .then(function(files) {
-      gallery.collection = imageFetcher.generateCollectionOfImages(files.data, imagesDir);
-  });
+  // upload new image set
+
 })

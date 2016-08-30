@@ -3,10 +3,8 @@ angular.module('cover', [])
 
     var cover = this;
 
-    cover.images;
-    cover.imagesDir = '/assets/images/hiroshige/';
-    cover.counter = 0;
-
+    // find a way to update the cover image on a timer    
     imageFetcher.fetchImages()
-    // find a way to update the cover image on a timer
+
+    // clicking on the image makes a larger, modal version of it
 })
