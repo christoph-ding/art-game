@@ -7,35 +7,27 @@ angular.module('gamePlayer', [])
     if (!deck.length) {
       var images = imageFetcher.fetchImages()
       // call generate deck
-      console.log('creating a new deck with images: ', images);
       generateDeck(images, size)
-      // set deck to the return of deck
+      shuffle(deck);  
     }
     return deck;
   }
 
   function generateDeck(images, size) {
-    // check if there are enough images to make a game of the correct size
+    // only make the deck if there are enough images for the size requested
     if (canMakeDeck(images, size)) {
-    // if yes, then...
-      console.log('generating deck...')
-      // randomly pick pairs of images from the imageset
       randomImages = pickRandomSubset(images, size / 2);
-      // assign those images to pairs of cards
-      console.log(randomImages);
-      // don't return, all we do is change deck
+      attachImagesToCards(randomImages);
     }
   }
 
   function canMakeDeck(images, size) {
-    console.log('checking if we can make a deck...');
     var pairsRequired = size / 2;
     // returns bool
     return images.length > pairsRequired;
   }
 
   function pickRandomSubset(images, subsetSize) {
-    console.log('picking a subset of images');
     shuffle(images);
     var imageSubset = images.slice(0, subsetSize);
     return imageSubset;
@@ -43,11 +35,16 @@ angular.module('gamePlayer', [])
 
   function attachImagesToCards(imageSubset) {
     // returns a deck of pairs of cards
+    imageSubset.forEach(function(image) {
+      firstCard = new card(image);
+      secondCard = new card(image);
+      deck.push(firstCard);
+      deck.push(secondCard);
+    })
   }
 
   function shuffle(a) {
     // shuffles the main deck
-    console.log('shuffling...');
     var j, x, i;
     for (i = a.length; i; i--) {
         j = Math.floor(Math.random() * i);

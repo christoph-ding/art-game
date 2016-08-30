@@ -5,6 +5,9 @@ angular.module('game', [])
 
   // get a deck of cards
   game.deck = deckOfCards.getDeck(10);
+
+  console.log(game.deck);
+
   // get a board using that deck
 
   // get a roundHandler
