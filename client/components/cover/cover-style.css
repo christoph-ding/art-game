@@ -1,12 +1,19 @@
 /* Cover */
-.cover {
-
+.screen-container {
+  width: 100%;
+  padding: 5%;
+  text-align: justify;
 }
 
 .screen {
-  height: 343px;
-  width: 80%;
-  min-width: 550px;
+  max-height: 600px;
+  max-width: 28%;
 
-  margin: 18px auto;
+  display: inline-block;
+}
+
+.screen-container:after {
+  content: '';
+  width: 100%; /* Ensures there are at least 2 lines of text, so justification works */
+  display: inline-block;
 }

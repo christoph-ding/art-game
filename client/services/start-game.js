@@ -8,7 +8,6 @@ angular.module('gamePlayer', [])
       var images = imageFetcher.fetchImages()
       // call generate deck
       generateDeck(images, size)
-      shuffle(deck);  
     }
     return deck;
   }
@@ -28,7 +27,7 @@ angular.module('gamePlayer', [])
   }
 
   function pickRandomSubset(images, subsetSize) {
-    shuffle(images);
+    imageFetcher.shuffle(images);
     var imageSubset = images.slice(0, subsetSize);
     return imageSubset;
   }
@@ -43,16 +42,7 @@ angular.module('gamePlayer', [])
     })
   }
 
-  function shuffle(a) {
-    // shuffles the main deck
-    var j, x, i;
-    for (i = a.length; i; i--) {
-        j = Math.floor(Math.random() * i);
-        x = a[i - 1];
-        a[i - 1] = a[j];
-        a[j] = x;
-    }
-  }
+
 
   var card = function(title, imageUrl) {
     this.URL = imageUrl;
