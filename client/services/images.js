@@ -29,7 +29,7 @@ angular.module('curator', [])
   }
 })
 
-.server('modal', function() {
+.service('modal', function() {
 
   var imageModal;
 
@@ -45,9 +45,9 @@ angular.module('curator', [])
   }
 
   var modal = function() {
-    imageURL: '',
-    modelClass: 'hidden',
-    hide: function() {
+    this.imageURL = '',
+    this.modelClass = 'hidden',
+    this.hide = function() {
       this.modelClass = 'hidden'
     }
   }
