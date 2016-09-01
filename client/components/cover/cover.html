@@ -1,12 +1,13 @@
 <!-- cover -->
 <div class='cover inner-view'>
 
-<!--   <div class='header-bar'>
-  </div> -->
+  <div ng-class='cover.modal.class' ng-model="cover.modal" ng-click="cover.modal.hide()">
+      <img class='modal-image' src='{{cover.modal.imageURL}}'>
+  </div>
 
   <div class="screen-container">
-    <img class="screen" src="{{cover.images[0].URL}}">
-    <img class="screen" src="{{cover.images[1].URL}}">
-    <img class="screen" src="{{cover.images[2].URL}}">
+    <img class="screen" src="{{cover.imageOne.URL}}" ng-click="cover.modal.focus(cover.imageOne.URL)">
+    <img class="screen" src="{{cover.imageTwo.URL}}" ng-click="cover.modal.focus(cover.imageTwo.URL)">
+    <img class="screen" src="{{cover.imageThree.URL}}" ng-click="cover.modal.focus(cover.imageThree.URL)">
   </div>
 </div>
