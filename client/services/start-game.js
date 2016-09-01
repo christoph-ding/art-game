@@ -89,20 +89,19 @@ angular.module('gamePlayer', [])
 })
 
 .service('roundHandler', function($timeout) {
-  this.generateRoundHandler = function() {
+  this.generateRoundHandler = function(game) {
     var currentRound;
 
     if (!currentRound) {
-      currentRound = new roundHandler();
+      currentRound = new roundHandler(game);
     } 
     return currentRound;
   }
 
-  var roundHandler = function() {
-    this.score = 0;
-    this.triesLeft = 10;
+  var roundHandler = function(game) {
     this.cardAlreadyRevealed = false;
     this.playerCanControl = true;
+    this.game = game;
 
     this.processPlayerChoice = function(flippedCard) {
       // we take control of the board from player for a little bit
@@ -136,7 +135,8 @@ angular.module('gamePlayer', [])
     }
 
     this.resolveMatch = function(cardOne, cardTwo) {
-      this.score++;
+      // increase score
+      
       this.keepRevealed(cardOne, cardTwo);
     }
 
@@ -147,7 +147,8 @@ angular.module('gamePlayer', [])
     }
     
     this.resolveMiss = function(cardOne, cardTwo) {
-      this.triesLeft--;
+      // decrease tries
+
       var roundHandler = this;
       $timeout(function () {
         roundHandler.turnFacedown(cardOne, cardTwo);
@@ -168,21 +169,47 @@ angular.module('gamePlayer', [])
 })
 
 .service('gameHandler', function() {
+  var currentGame;
 
   // generate a game handler
-
+  this.generateGameHandler = function(pairs, tries) {
+    if (!currentGame) {
+      currentGame = new game(tries);
+    }
+    return currentGame;
+  }
 
   // Game Handler, which has
-    // score
-    // triesLeft
-
-
+  var game = function(tries) {
+    this.score = 0;
+    this.triesLeft = tries;
   // calculate result
+    this.incrementScore = function() {
+      this.score++;
+      determineWinLoss();
+    }
+
+    this.decrementTries = function() {
+      this.triesLeft--;
+      determineWinLoss();
+    }
+
+  var determineWinLoss = function() {
+    if (this.score == pairs) {
+      console.log("you win!")
+    }
+    if (this.triesLeft == 0) {
+      console.log("you lose!")
+    }
     
+  }
+
+
+
 
   // win action
 
 
   // lose action
-
+  }
 })
