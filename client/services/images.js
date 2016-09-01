@@ -33,9 +33,9 @@ angular.module('curator', [])
 
   var imageModal;
 
-  this.generateModal = function(imageURL) {
+  this.generateModal = function() {
     if (!imageModal) {
-      imageModal = new modal(imageURL);
+      imageModal = new modal();
     }
     return imageModal;
   }
@@ -46,9 +46,13 @@ angular.module('curator', [])
 
   var modal = function() {
     this.imageURL = '',
-    this.modelClass = 'hidden',
+    this.class = 'hidden',
     this.hide = function() {
-      this.modelClass = 'hidden'
+      this.class = 'hidden'
+    }
+    this.focus = function(imageURL) {
+      this.imageURL = imageURL;
+      this.class = 'modal';
     }
   }
 })

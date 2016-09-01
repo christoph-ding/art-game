@@ -4,13 +4,13 @@
     <h1 class='header-text'> Image Set </h1>
   </div>
 
-  <div ng-class='gallery.focusModal.modelClass' ng-model="gallery.focusModal" ng-click="gallery.focusModal.hide()">
-      <img class='modal-image' src='{{gallery.focusModal.url}}'>
+  <div ng-class='gallery.modal.class' ng-model="gallery.modal" ng-click="gallery.modal.hide()">
+      <img class='modal-image' src='{{gallery.modal.imageURL}}'>
   </div>
 
   <div class='grid-container'>
     <div class='image' ng-repeat="image in gallery.images" style=
-      "background-image: url('{{image.URL}}')" ng-click="gallery.changeFocus(image)"> 
+      "background-image: url('{{image.URL}}')" ng-click="gallery.modal.focus(image.URL)"> 
     </div>
   </div>
 

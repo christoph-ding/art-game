@@ -27,7 +27,6 @@ app.get('/images', function(req, res) {
       images[index] = path.join(imagesDir + image);
     })
     
-    console.log(images);
     res.send(images);
   });
 });
