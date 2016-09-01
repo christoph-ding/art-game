@@ -36,8 +36,8 @@ angular.module('gamePlayer', [])
   function attachImagesToCards(imageSubset) {
     // returns a deck of pairs of cards
     imageSubset.forEach(function(image) {
-      firstCard = new card(image);
-      secondCard = new card(image);
+      firstCard = new card(image.title, image.URL);
+      secondCard = new card(image.title, image.URL);
       deck.push(firstCard);
       deck.push(secondCard);
     })
@@ -54,9 +54,10 @@ angular.module('gamePlayer', [])
     }
   }
 
-  var card = function(imageUrl) {
-    this.revealed = false;
+  var card = function(title, imageUrl) {
     this.URL = imageUrl;
+    this.title = title;
+    this.revealed = false;
 
     // determines what happens when the card is clicked
     this.flip = function() {
@@ -64,6 +65,7 @@ angular.module('gamePlayer', [])
           this.revealed = true;
       }
     }
+
     this.getStyle = function() {
       if (this.revealed) {
         return 'background-image: url(' + '"' + this.URL + '"' + ') '
@@ -89,6 +91,7 @@ angular.module('gamePlayer', [])
 })
 
 .service('roundHandler', function($timeout) {
+  
   this.generateRoundHandler = function(game) {
     var currentRound;
 
@@ -115,7 +118,6 @@ angular.module('gamePlayer', [])
         var cardsMatch = this.compareCards(this.cardAlreadyRevealed, flippedCard);
 
         // get the result of the round
-
         if (cardsMatch) {
           this.resolveMatch(this.cardAlreadyRevealed, flippedCard);
         } else {
@@ -197,7 +199,6 @@ angular.module('gamePlayer', [])
     }
 
     this.determineWinLoss = function() {
-      console.log('score: ', this.score, ' tries: ', this.triesLeft);
       if (this.score === this.pairs) {
         this.winAction();
       }

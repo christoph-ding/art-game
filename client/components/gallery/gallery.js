@@ -2,11 +2,8 @@ angular.module('gallery', [])
 .controller('galleryController', function(imageFetcher, $window) {
   var gallery = this;
 
-
-  gallery.collection = null;
-
   // fetch image with skinny controller
-
+  gallery.images = imageFetcher.fetchImages();
 
   // make modal into a service
   gallery.focusModal = {

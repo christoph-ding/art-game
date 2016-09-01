@@ -20,7 +20,6 @@ angular.module('game', [])
     if (card !== game.roundHandler.cardAlreadyRevealed && game.roundHandler.playerCanControl && card != game.roundHandler.currentlyShowing) {
       card.flip();
       // handle the round, collect the result
-      console.log('processing');
       game.roundHandler.processPlayerChoice(card);
       // 
     }

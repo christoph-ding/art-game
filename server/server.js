@@ -26,6 +26,7 @@ app.get('/images', function(req, res) {
     images.forEach(function(image, index, images) {
       images[index] = path.join(imagesDir + image);
     })
+    
     console.log(images);
     res.send(images);
   });
