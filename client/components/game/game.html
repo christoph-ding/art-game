@@ -1,19 +1,14 @@
 <div class='game inner-view'>
-
-  <!-- <div class='header-bar'> -->
-    <!-- <h1 class='header-text score-board'> Score </h1> -->
-    <!-- <h1 ng-model='game.roundHandler'> {{ game.roundHandler.score }}</h1>
-    <h1 ng-model='game.roundHandler'> {{ game.roundHandler.triesLeft }}</h1> -->
   
     <div class='header-bar' ng-model='game.roundHandler'>
       <div class='score-board'>
         <div class='score'>
           <h2> Score: </h2>
-          <h2> {{ game.roundHandler.score }} </h2>
+          <h2> {{ game.currentGame.score }} </h2>
         </div>
         <div class='score'>
           <h2> Rounds Left: </h2>
-          <h2> {{ game.roundHandler.triesLeft }} </h2>
+          <h2> {{ game.currentGame.triesLeft }} </h2>
         </div>
       </div>
     </div>

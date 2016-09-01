@@ -135,20 +135,14 @@ angular.module('gamePlayer', [])
     }
 
     this.resolveMatch = function(cardOne, cardTwo) {
-      // increase score
-      
       this.keepRevealed(cardOne, cardTwo);
+      this.game.incrementScore();
     }
 
-    this.keepRevealed = function(cardOne, cardTwo) {
-      // a match should keep both cards revealed until end of game
-      cardOne.revealed = true;
-      cardTwo.revealed = true;
-    }
     
     this.resolveMiss = function(cardOne, cardTwo) {
-      // decrease tries
-
+      this.game.decrementTries();
+      
       var roundHandler = this;
       $timeout(function () {
         roundHandler.turnFacedown(cardOne, cardTwo);
@@ -159,6 +153,12 @@ angular.module('gamePlayer', [])
     this.turnFacedown = function(cardOne, cardTwo) {
       cardOne.revealed = false;
       cardTwo.revealed = false; 
+    }
+
+    this.keepRevealed = function(cardOne, cardTwo) {
+      // a match should keep both cards revealed until end of game
+      cardOne.revealed = true;
+      cardTwo.revealed = true;
     }
 
     this.resetRound = function() {
@@ -174,42 +174,44 @@ angular.module('gamePlayer', [])
   // generate a game handler
   this.generateGameHandler = function(pairs, tries) {
     if (!currentGame) {
-      currentGame = new game(tries);
+      currentGame = new game(pairs, tries);
     }
     return currentGame;
   }
 
-  // Game Handler, which has
-  var game = function(tries) {
+  // Game Handler
+  var game = function(pairs, tries) {
     this.score = 0;
     this.triesLeft = tries;
+    this.pairs = pairs;
+
   // calculate result
     this.incrementScore = function() {
       this.score++;
-      determineWinLoss();
+      this.determineWinLoss();
     }
 
     this.decrementTries = function() {
       this.triesLeft--;
-      determineWinLoss();
+      this.determineWinLoss();
     }
 
-  var determineWinLoss = function() {
-    if (this.score == pairs) {
-      console.log("you win!")
+    this.determineWinLoss = function() {
+      console.log('score: ', this.score, ' tries: ', this.triesLeft);
+      if (this.score === this.pairs) {
+        this.winAction();
+      }
+      if (this.triesLeft === 0) {
+        this.loseAction();
+      } 
     }
-    if (this.triesLeft == 0) {
-      console.log("you lose!")
-    }
-    
-  }
-
-
-
-
   // win action
-
-
+    this.winAction = function (){
+      console.log("you win!");
+    }
   // lose action
+    this.loseAction = function() {
+      console.log("you lose!");
+    }
   }
 })
