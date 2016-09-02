@@ -114,8 +114,31 @@ a {
   text-align: center;
 }
 
-/* colors */
-.one {
-  background-color: #FFBBA1;
+.hidden {
+  display: none;
+}
+
+.modal {
+  z-index: 1;
+
+  height: 100%;
+  width: 100%;
+
+  position: fixed;
+  left: 0px;
+  top: 0px;
+
+  background-color: rgba(0,0,0,0.4);
+
+  overflow-y: scroll;
+}
+
+.modal-image {
+  max-height: 75%;
+  max-width: 75%;
+  
+  margin: 15% auto;
+
+  display: block;
 }
 

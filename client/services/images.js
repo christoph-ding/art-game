@@ -40,7 +40,10 @@ angular.module('curator', [])
     this.URL = imageURL;
   }
 
-
+  this.fetchCoverImages = function(images) {
+    this.shuffle(images);
+    return   
+  } 
 })
 
 .service('modal', function() {
@@ -69,4 +72,8 @@ angular.module('curator', [])
       this.class = 'modal';
     }
   }
+
+
+
+
 })
