@@ -6,6 +6,7 @@ angular.module('curator', [])
 
   this.shuffle = function(a) {
     // shuffles an array
+    console.log('shuffling');
     var j, x, i;
     for (i = a.length; i; i--) {
         j = Math.floor(Math.random() * i);

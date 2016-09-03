@@ -8,12 +8,12 @@ angular.module('cover', [])
     cover.imageOne = cover.images[0];
     cover.imageTwo = cover.images[1];
     cover.imageThree = cover.images[2];
-    $scope.$apply();
+    console.log('hey');
   }
 
   cover.images = imageFetcher.fetchImages();
   cover.modal = modal.generateModal();
   cover.setCoverImages();
 
-  setInterval(cover.setCoverImages, 4000);
+  // setInterval(cover.setCoverImages, 4000);
 })

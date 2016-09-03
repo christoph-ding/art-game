@@ -8,6 +8,7 @@ angular.module('game', [])
   var pairs = deckSize / 2;
   var tries = 10;
 
+  debugger;
   game.deck = deckOfCards.getDeck(deckSize);
   game.board = deckOfCards.generateBoard(3, 6, game.deck);
 

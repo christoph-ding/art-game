@@ -9,6 +9,7 @@ angular.module('gamePlayer', [])
       // call generate deck
       generateDeck(images, size)
     }
+    imageFetcher.shuffle(deck);
     return deck;
   }
 
