@@ -15,6 +15,8 @@ app.use(express.static(path.join(__dirname + '/../client')));
 
 // get images
 app.get('/images', function(req, res) {
+  console.log(req.query);
+
   // we read the image names, then send that back
   fs.readdir(path.join(__dirname + '/../client/assets/images/icons'), function(err, files) {
     if (err) { console.log(err); }
@@ -26,15 +28,24 @@ app.get('/images', function(req, res) {
     images.forEach(function(image, index, images) {
       images[index] = path.join(imagesDir + image);
     })
-    
     res.send(images);
   });
 });
 
+app.get('/images/:imageSetName', function(req, res) {
+  console.log(req.params);
+  console.log('got here')
+  res.send('hello!');
+})
+
 // post images
 app.post('/upload-images', function(req, res) {
+
+  console.log(req.params);
   res.send('upload-images');
 });
+
+
 
 // sign-in
 app.post('/sign-in', function(req, res) {

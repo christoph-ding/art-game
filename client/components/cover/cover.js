@@ -4,11 +4,9 @@ angular.module('cover', [])
   var cover = this;
 
   cover.setCoverImages = function() {
-    imageFetcher.shuffle(cover.images);
     cover.imageOne = cover.images[0];
     cover.imageTwo = cover.images[1];
     cover.imageThree = cover.images[2];
-    console.log('hey');
   }
 
   cover.images = imageFetcher.fetchImages();

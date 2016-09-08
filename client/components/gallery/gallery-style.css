@@ -21,4 +21,23 @@
   opacity: 1; 
 }
 
+.input {
+  /*position: relative;*/
+  display: inline-block;
+  float: left;
+}
 
+.header-text {
+  /*position: float;*/
+  float: left;
+
+  height: 125px;
+  line-height: 125px;
+  width: 50%;
+  
+  padding: 0;
+  margin: 0 auto;
+  top: 0;
+
+  text-align: center;
+}
