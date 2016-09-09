@@ -8,57 +8,51 @@ var app = express();
 var port = 8000;
 app.listen(port);
 
-var imagesDir = '/../assets/images/icons/';
-
 // routing
 app.use(express.static(path.join(__dirname + '/../client')));
 
-// get images
-app.get('/images', function(req, res) {
-  console.log(req.query);
+// this is the callback version
+var fetchImages = function(imageSetName, callback) {
 
-  // we read the image names, then send that back
-  fs.readdir(path.join(__dirname + '/../client/assets/images/icons'), function(err, files) {
-    if (err) { console.log(err); }
-    // filter files so we do not send hidden . files, such as .DS_Store
-    images = files.filter(function(file) {
-      return file.charAt(0) !== '.';
-    })
-    // set each image name to the full path to that image
-    images.forEach(function(image, index, images) {
-      images[index] = path.join(imagesDir + image);
-    })
-    res.send(images);
+  var imagesDirFromIndex = '/../assets/images/' + imageSetName;
+  var imagesDirFromServer = '/../client/assets/images/' + imageSetName; 
+  var fullPathToImages = path.join(__dirname + imagesDirFromServer);
+
+  fs.exists(fullPathToImages, function(exists) {
+    if (exists) {
+      fs.readdir(fullPathToImages, function(err, files) {
+        if (err) { return console.log(err); }
+        // filter files so we do not send hidden . files, such as .DS_Store
+        images = files.filter(function(file) {
+          return file.charAt(0) !== '.';
+        });
+        // set each image name to the full path to that image
+        images.forEach(function(image, index, images) {
+          // images[index] = path.join(fullPathToImages + image);
+          images[index] = path.join(imagesDirFromIndex + image);
+        });
+        callback(images);
+      });
+    } else {
+      console.log('does not exist!');
+    }
   });
-});
+}
 
-app.get('/images/:imageSetName', function(req, res) {
-  console.log(req.params);
-  console.log('got here')
-  res.send('hello!');
-})
+// this is the promise version
 
-// post images
-app.post('/upload-images', function(req, res) {
+// change a imageset
+app.get('/images', function(req, res) {
+  var imageSetName;
+  if (req.query.imageSetName) {
+    imageSetName = req.query.imageSetName;
+  } else {
+    imageSetName = 'hiroshige';
+  }
 
-  console.log(req.params);
-  res.send('upload-images');
-});
+  var imageSetPath = imageSetName + '/';
 
-
-
-// sign-in
-app.post('/sign-in', function(req, res) {
-  res.send('sign-in');
-});
-
-app.get('/sign-in', function(req, res) {
-  console.log('sign-in');
-  res.send('sign-in');
-});
-
-// sign-up
-app.post('/sign-up', function(req, res) {
-  console.log('sign-up');
-  res.send('sign-up');
+  fetchImages(imageSetPath, function(data) {
+    res.send(data);
+  });
 });
