@@ -7,12 +7,11 @@ angular.module('gallery', [])
 
   gallery.imageSet;
 
-  gallery.sendGalleryName = function () {
-    console.log(gallery.imageSet);
-    // var query = '/images/' + gallery.imageSet;
-    // $http.get(query);'
-
-    // $http.get('/images', { params: {}  });
+  gallery.changeImageSet = function() {
+    $http.get('/images', { params: { imageSetName: gallery.imageSet } })
+    .then(function(files) {
+      gallery.images = files.data;
+      console.log(gallery.images);
+    })
   }
-
 })
